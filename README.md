@@ -102,7 +102,7 @@ sudo zypper install libsoup-3_0-0 typelib-1_0-Soup-3_0 typelib-1_0-NM-1_0 libadw
 
 1. Clone or download this repository onto your machine:
    ```bash
-   git clone https://github.com/your-username/auto_web_login_gnome.git
+   git clone https://github.com/ashishkupadhyay/auto_web_login_gnome.git
    cd auto_web_login_gnome
    ```
 
