@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.vitportallogin" path="/org/gnome/shell/extensions/vitportallogin/">
+    <key name="onboarding-complete" type="b">
+      <default>false</default>
+      <summary>Onboarding completed</summary>
+      <description>Whether the user has entered and saved portal credentials.</description>
+    </key>
+    <key name="username" type="s">
+      <default>""</default>
+      <summary>Portal Username</summary>
+      <description>VIT Captive Portal registration number or username.</description>
+    </key>
+    <key name="password" type="s">
+      <default>""</default>
+      <summary>Portal Password</summary>
+      <description>VIT Captive Portal password.</description>
+    </key>
+    <key name="auto-login" type="b">
+      <default>true</default>
+      <summary>Auto-login</summary>
+      <description>Automatically log in when connecting to VIT campus Wi-Fi.</description>
+    </key>
+    <key name="show-notifications" type="b">
+      <default>true</default>
+      <summary>Show desktop notifications</summary>
+      <description>Display notifications on successful or failed login and logout.</description>
+    </key>
+    <key name="login-url" type="s">
+      <default>"http://phc.prontonetworks.com/cgi-bin/authlogin"</default>
+      <summary>Login URL</summary>
+      <description>VIT Pronto captive portal login POST endpoint.</description>
+    </key>
+    <key name="logout-url" type="s">
+      <default>"http://phc.prontonetworks.com/cgi-bin/authlogout"</default>
+      <summary>Logout URL</summary>
+      <description>VIT Pronto captive portal logout GET endpoint.</description>
+    </key>
+    <key name="account-url" type="s">
+      <default>"http://136.233.9.110/registration/Main.jsp"</default>
+      <summary>Account URL</summary>
+      <description>VIT Pronto account settings web portal URL.</description>
+    </key>
+  </schema>
+</schemalist>

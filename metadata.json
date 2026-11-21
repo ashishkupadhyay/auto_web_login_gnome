@@ -1,0 +1,17 @@
+{
+  "name": "VIT Portal Login",
+  "description": "Automatic and manual login for the VIT Vellore Pronto captive portal when connected to campus Wi-Fi.",
+  "uuid": "vit-portal-login@vit.ac.in",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.vitportallogin",
+  "url": "https://github.com/vit-portal-login",
+  "version": 1
+}

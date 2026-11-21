@@ -1,0 +1,112 @@
+/* VIT Portal Login GNOME Shell Stylesheet */
+
+.vit-menu-box {
+    padding: 8px 12px;
+    spacing: 8px;
+    min-width: 280px;
+}
+
+.vit-header-title {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.vit-header-subtitle {
+    font-size: 9pt;
+    color: #9a9996;
+    margin-bottom: 8px;
+}
+
+.vit-badge {
+    border-radius: 9999px;
+    padding: 3px 10px;
+    font-size: 9pt;
+    font-weight: 600;
+}
+
+.vit-badge-campus {
+    background-color: rgba(46, 194, 89, 0.22);
+    color: #57e389;
+    border: 1px solid rgba(46, 194, 89, 0.4);
+}
+
+.vit-badge-other {
+    background-color: rgba(222, 222, 222, 0.12);
+    color: #c0bfbc;
+    border: 1px solid rgba(222, 222, 222, 0.2);
+}
+
+.vit-form-label {
+    font-size: 9.5pt;
+    font-weight: bold;
+    color: #deddda;
+    margin-top: 6px;
+    margin-bottom: 2px;
+}
+
+.vit-entry {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 6px 10px;
+    min-height: 28px;
+    font-size: 10pt;
+}
+
+.vit-entry:focus {
+    border-color: #3584e4;
+    background-color: rgba(53, 132, 228, 0.12);
+}
+
+.vit-btn {
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    transition-duration: 150ms;
+}
+
+.vit-btn:hover {
+    filter: brightness(1.15);
+}
+
+.vit-btn:active {
+    filter: brightness(0.9);
+}
+
+.vit-btn-primary {
+    background-color: #3584e4;
+    color: #ffffff;
+}
+
+.vit-btn-login {
+    background-color: #2ec27e;
+    color: #ffffff;
+    border-radius: 9999px;
+    font-size: 11pt;
+    padding: 8px 16px;
+}
+
+.vit-btn-logout {
+    background-color: #e01b24;
+    color: #ffffff;
+    border-radius: 9999px;
+    font-size: 10pt;
+    padding: 6px 14px;
+}
+
+.vit-status-msg {
+    font-size: 9.5pt;
+    color: #deddda;
+    padding: 4px 2px;
+}
+
+.vit-error-msg {
+    font-size: 9pt;
+    color: #ff7b63;
+    padding: 2px 0;
+}

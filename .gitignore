@@ -1,0 +1,6 @@
+# GNOME extension build artifacts
+schemas/gschemas.compiled
+*.shell-extension.zip
+.DS_Store
+*~
+*.log
