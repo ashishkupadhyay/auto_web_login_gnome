@@ -1,4 +1,4 @@
-# VIT Portal Login — GNOME Shell Extension
+# VIT Portal Login - GNOME Shell Extension
 
 [![GNOME Shell](https://img.shields.io/badge/GNOME%20Shell-45%20%7C%2046%20%7C%2047%20%7C%2048%20%7C%2049%20%7C%2050%20%7C%2051-blue.svg)](https://gjs.guide)
 [![Platform](https://img.shields.io/badge/Platform-Any%20Linux%20with%20GNOME%2045%E2%80%9351-informational.svg)](https://www.gnome.org)
