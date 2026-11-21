@@ -15,7 +15,7 @@ Built for modern GNOME Shell (including **GNOME 51** and GNOME 45+) using native
 This extension is **supported on any Linux distribution running GNOME Shell 45 through 51**.
 
 Compatible distributions include:
-- **Fedora Workstation** (Fedora 39, 40, 41, 42, 43, 44+)
+- **Fedora**
 - **Ubuntu** (23.10, 24.04 LTS Noble Numbat, 24.10 Oracular Oriole, and newer)
 - **Arch Linux / Manjaro / EndeavourOS** (with GNOME)
 - **Debian** (Debian 13 Trixie / Testing / Sid with GNOME 45+)
