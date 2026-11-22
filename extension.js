@@ -140,7 +140,7 @@ const VitPortalIndicator = GObject.registerClass({
 
     _buildOnboardingView(initialUser, initialPass) {
         const box = new St.BoxLayout({
-            vertical: true,
+            orientation: Clutter.Orientation.VERTICAL,
             style_class: 'vit-menu-box',
         });
 
@@ -244,13 +244,13 @@ const VitPortalIndicator = GObject.registerClass({
 
         // --- Status Header Item ---
         const headerBox = new St.BoxLayout({
-            vertical: true,
+            orientation: Clutter.Orientation.VERTICAL,
             style_class: 'vit-menu-box',
         });
 
         // Top Row: SSID & Badge
         const rowSsid = new St.BoxLayout({
-            vertical: false,
+            orientation: Clutter.Orientation.HORIZONTAL,
             x_align: Clutter.ActorAlign.FILL,
         });
 
@@ -287,7 +287,7 @@ const VitPortalIndicator = GObject.registerClass({
 
         // --- Action Buttons ---
         const btnBox = new St.BoxLayout({
-            vertical: false,
+            orientation: Clutter.Orientation.HORIZONTAL,
             style_class: 'vit-menu-box',
             x_align: Clutter.ActorAlign.FILL,
         });

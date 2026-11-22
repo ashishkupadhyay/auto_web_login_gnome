@@ -13,6 +13,13 @@ install: schemas
 	gnome-extensions enable $(UUID) || true
 	@echo "Extension installed to $(DEST)"
 
+uninstall:
+	@echo "Disabling extension..."
+	gnome-extensions disable $(UUID) || true
+	@echo "Removing $(DEST)..."
+	rm -rf $(DEST)
+	@echo "Extension uninstalled. Please log out and back in to reload GNOME Shell."
+
 pack: schemas
 	gnome-extensions pack --force --extra-source=lib --extra-source=icons --extra-source=stylesheet.css
 
@@ -20,4 +27,4 @@ clean:
 	rm -f schemas/gschemas.compiled
 	rm -f $(UUID).shell-extension.zip
 
-.PHONY: all schemas install pack clean
+.PHONY: all schemas install uninstall pack clean

@@ -1,7 +1,7 @@
-# VIT Portal Login - GNOME Shell Extension
+# VIT Portal Login: GNOME Shell Extension
 
 [![GNOME Shell](https://img.shields.io/badge/GNOME%20Shell-45%20%7C%2046%20%7C%2047%20%7C%2048%20%7C%2049%20%7C%2050%20%7C%2051-blue.svg)](https://gjs.guide)
-[![Platform](https://img.shields.io/badge/Platform-Any%20Linux%20with%20GNOME%2045%E2%80%9351-informational.svg)](https://www.gnome.org)
+[![Platform](https://img.shields.io/badge/Platform-Any%20Linux%20with%20GNOME%2045-51-informational.svg)](https://www.gnome.org)
 [![License: GPL-2.0+](https://img.shields.io/badge/License-GPL--2.0%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
 A lightweight, native GNOME Shell extension providing automatic and manual login/logout for the **VIT Vellore Pronto Captive Portal** when connected to campus Wi-Fi networks.
@@ -15,16 +15,16 @@ Built for modern GNOME Shell (including **GNOME 51** and GNOME 45+) using native
 This extension is **supported on any Linux distribution running GNOME Shell 45 through 51**.
 
 Compatible distributions include:
-- **Fedora**
+- **Fedora Workstation** (Fedora 39, 40, 41, 42, 43, 44, 45+)
 - **Ubuntu** (23.10, 24.04 LTS Noble Numbat, 24.10 Oracular Oriole, and newer)
 - **Arch Linux / Manjaro / EndeavourOS** (with GNOME)
 - **Debian** (Debian 13 Trixie / Testing / Sid with GNOME 45+)
 - **openSUSE** (Tumbleweed / Slowroll / Leap with GNOME)
-- **Pop!_OS / Vanilla OS / NixOS** (with GNOME 45+)
+- **Pop!_OS / Zorin OS / Vanilla OS / NixOS** (with GNOME 45+)
 
 > [!NOTE]
 > The requirements are:
-> 1. **GNOME Shell 45–51** (standard modern ESM extension architecture)
+> 1. **GNOME Shell 45-51** (standard modern ESM extension architecture)
 > 2. **NetworkManager** for campus Wi-Fi SSID detection
 
 ---
@@ -33,8 +33,8 @@ Compatible distributions include:
 
 - **First-Run Onboarding Prompt**: Automatically prompts the user for their registration number and password on first launch and saves them directly into GNOME's secure configuration storage (`GSettings`).
 - **Campus Network Auto-Detection**: Monitors active Wi-Fi and recognizes:
-  - `VIT 2.4G` & `VIT 5G`
-  - Hostel block Wi-Fi: `[A-T]-VIT` (e.g. `A-VIT`, `M-VIT`, `Q-VIT`, etc.)
+  - `VIT 2.4G` and `VIT 5G`
+  - Hostel block Wi-Fi: `[A-T]-VIT` (such as `A-VIT`, `M-VIT`, `Q-VIT`)
 - **Automatic Background Login**: Automatically sends login requests upon connecting to any recognized campus SSID with a 2.2-second stabilization delay for DHCP assignment.
 - **Top Bar Indicator**:
   - Live campus connection status pill (`Campus Wi-Fi` vs `Off-Campus`).
@@ -52,11 +52,12 @@ Compatible distributions include:
 ```
 auto_web_login_gnome/
 ├── metadata.json                        # Extension manifest (UUID: vit-portal-login@vit.ac.in)
-├── extension.js                         # Top bar indicator & interactive onboarding UI
+├── extension.js                         # Top bar indicator and interactive onboarding UI
 ├── prefs.js                             # Libadwaita / GTK4 Settings window
 ├── stylesheet.css                       # Modern GNOME Shell styling
 ├── install.sh                           # 1-click installer script for Linux
-├── Makefile                             # make install, make pack, make schemas
+├── uninstall.sh                         # 1-click uninstaller script for Linux
+├── Makefile                             # make install, make uninstall, make pack, make schemas
 ├── schemas/
 │   └── org.gnome.shell.extensions.vitportallogin.gschema.xml  # GSettings schema
 ├── icons/
@@ -65,7 +66,7 @@ auto_web_login_gnome/
 │   └── wifi-reset-symbolic.svg
 └── lib/
     ├── portalController.js              # Captive portal HTTP engine (Libsoup 3)
-    └── ssidWatcher.js                   # NetworkManager & DBus Wi-Fi SSID watcher
+    └── ssidWatcher.js                   # NetworkManager and DBus Wi-Fi SSID watcher
 ```
 
 ---
@@ -112,7 +113,7 @@ sudo zypper install libsoup-3_0-0 typelib-1_0-Soup-3_0 typelib-1_0-NM-1_0 libadw
    ./install.sh
    ```
 
-3. **Reload GNOME Shell**:
+3. Reload GNOME Shell:
    - **On Wayland** (default on modern distributions): Log out and log back in.
    - **On X11**: Press `Alt + F2`, type `r`, and press `Enter`.
 
@@ -151,12 +152,12 @@ make pack
 
 ---
 
-## First-Time Setup & Usage
+## First-Time Setup and Usage
 
 1. Click the Wi-Fi icon in the GNOME top bar.
 2. A setup card will appear: **"VIT Wi-Fi Portal Setup"**.
 3. Enter your **Username / Registration Number** (e.g. `21BCE1001`) and **Password**.
-4. Click **Save Credentials & Continue**.
+4. Click **Save Credentials and Continue**.
 5. Once saved:
    - When connected to any VIT Wi-Fi network, the extension will log in automatically.
    - You can also click **Login** or **Logout** manually from the menu.
@@ -164,7 +165,56 @@ make pack
 
 ---
 
-## Debugging & Logs
+## Uninstallation
+
+### Method 1: Using the Automated Script (Easiest)
+
+Run the included uninstaller script:
+```bash
+chmod +x uninstall.sh
+./uninstall.sh
+```
+This disables the extension, removes its files from `~/.local/share/gnome-shell/extensions/`, and optionally clears saved credentials.
+
+---
+
+### Method 2: Using the GNOME GUI (Extensions App)
+
+1. Open the **Extensions** (or **Extension Manager**) app from your application menu.
+2. Locate **VIT Portal Login**.
+3. Click the three vertical dots on the right and select **Remove** / **Uninstall**.
+4. Log out and back in to reload GNOME Shell.
+
+---
+
+### Method 3: Manual Terminal Uninstallation
+
+```bash
+# 1. Disable the extension
+gnome-extensions disable vit-portal-login@vit.ac.in
+
+# 2. Remove the extension files
+rm -rf ~/.local/share/gnome-shell/extensions/vit-portal-login@vit.ac.in
+
+# 3. (Optional) Clear saved credentials and configuration
+gsettings reset-recursively org.gnome.shell.extensions.vitportallogin
+
+# 4. Reload GNOME Shell
+# - On Wayland: Log out and log back in.
+# - On X11: Press Alt + F2, type 'r', and press Enter.
+```
+
+---
+
+### Method 4: Using Makefile
+
+```bash
+make uninstall
+```
+
+---
+
+## Debugging and Logs
 
 To view real-time log output from GNOME Shell:
 ```bash
